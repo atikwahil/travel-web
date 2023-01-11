@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    command: npm start 0.0.0.0:3000
+    ports:
+      - "3000:3000"
+
+  backend:
+    build: ./backend
+    container_name: backend
+    command: python3 manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+
+    
